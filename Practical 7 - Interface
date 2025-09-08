@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+interface Area {
+	double calculateArea();
+}
+
+
+public class Interface implements Area {
+	
+	private double length;
+	private double width;
+	
+	public Interface(double length, double width) {
+		this.length = length;
+		this.width = width;
+	}
+	
+	public double calculateArea() {
+		return length* width;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the value of length");
+		int length = sc.nextInt();
+		System.out.println("Enter the value of width");
+		int width = sc.nextInt();
+		Interface rect = new Interface(length, width);
+		System.out.println("Area of the Shape" + rect.calculateArea());
+	}
+
+}
